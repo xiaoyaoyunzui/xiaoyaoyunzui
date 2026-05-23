@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>汪家卫 - 个人简历</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f0f2f5;
+      color: #2c3e50;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .resume {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      padding: 2.5rem 3rem;
+    }
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+    .header .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.6rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .header .meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .header .meta .label { color: rgba(255,255,255,0.5); }
+
+    /* ── Body ── */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+    }
+
+    .main { padding: 2.5rem 2rem 2.5rem 3rem; }
+    .side { padding: 2.5rem 3rem 2.5rem 0; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 2rem; }
+    .section:last-child { margin-bottom: 0; }
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #1a1a2e;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .section-title .dot {
+      width: 8px; height: 8px;
+      background: #1a1a2e;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* ── Timeline items ── */
+    .item { margin-bottom: 1.3rem; }
+    .item:last-child { margin-bottom: 0; }
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.3rem 1rem;
+    }
+    .item-head h3 {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+    .item-head .date {
+      font-size: 0.8rem;
+      color: #7f8c8d;
+      white-space: nowrap;
+    }
+    .item-sub {
+      font-size: 0.85rem;
+      color: #555;
+      margin: 0.15rem 0 0.35rem;
+    }
+    .item ul {
+      list-style: none;
+      padding: 0;
+    }
+    .item li {
+      font-size: 0.88rem;
+      color: #444;
+      padding: 0.15rem 0;
+      position: relative;
+      padding-left: 1rem;
+    }
+    .item li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #999;
+      font-size: 0.7rem;
+    }
+
+    /* ── Courses ── */
+    .courses {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    /* ── Sidebar ── */
+    .side .section-title {
+      font-size: 0.95rem;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .skill-tag {
+      font-size: 0.8rem;
+      background: #eef2f7;
+      color: #2c3e50;
+      padding: 0.25em 0.7em;
+      border-radius: 3px;
+      border: 1px solid #e0e4ea;
+    }
+    .side .info-row {
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .side .info-row strong {
+      color: #2c3e50;
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.1rem;
+    }
+
+    /* ── Self eval ── */
+    .self-eval {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .resume { box-shadow: none; border-radius: 0; max-width: 100%; }
+      .header { padding: 1.5rem 2rem; }
+      .main { padding: 1.5rem 1rem 1.5rem 2rem; }
+      .side { padding: 1.5rem 2rem 1.5rem 0; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 720px) {
+      .body { grid-template-columns: 1fr; }
+      .header { padding: 1.8rem 1.5rem; }
+      .header h1 { font-size: 1.6rem; }
+      .header .meta { gap: 0.4rem 1rem; font-size: 0.82rem; }
+      .main { padding: 1.5rem; }
+      .side { padding: 0 1.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+
+    <div class="header">
+      <h1>汪家卫</h1>
+      <div class="meta">
+        <span><span class="label">性别</span> 男</span>
+        <span><span class="label">籍贯</span> 宁波</span>
+        <span>&#9990; 17857539411</span>
+        <span>&#9993; 2775063301@qq.com</span>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="main">
+
+        <!-- 教育背景 -->
+        <div class="section">
+          <div class="section-title"><span class="dot"></span>教育背景</div>
+          <div class="item">
+            <div class="item-head">
+              <h3>浙江工贸职业技术学院</h3>
+            </div>
+            <p class="item-sub">电子信息工程技术 &#183; 大专</p>
+          </div>
+          <p class="courses"><strong>主修课程：</strong>计算机网络、人工智能导论、电子产品制作、程序设计基础、电子与电路技术、程序设计进阶（C语言）、Linux操作系统、单片机技术综合实践、嵌入式技术与应用、Python项目实战、嵌入式技术综合实践、传感网应用开发、Arduino项目实战、物联网无线通信技术、物联网应用程序设计、物联网应用与开发</p>
+        </div>
+
+        <!-- 校园经历 -->
+        <div class="section">
+          <div class="section-title"><span class="dot"></span>校园经历</div>
+
+          <div class="item">
+            <div class="item-head">
+              <h3>工匠坊</h3>
+              <span class="date">2023.12 — 2025.10</span>
+            </div>
+            <ul>
+              <li>跟随老师系统学习课外技术知识，涵盖焊接操作、各类常用工具使用、C 语言代码编写、多种编程软件应用</li>
+              <li>参与科技竞赛项目，将所学知识应用于实际作品开发</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-head">
+              <h3>大学生电子信息大赛</h3>
+              <span class="date">2024.07 — 2024.08</span>
+            </div>
+            <p class="item-sub">省级大专组</p>
+            <ul>
+              <li>担任团队队长，负责核心代码编写与系统调试</li>
+              <li>协调团队分工与任务调度，把控项目整体进度</li>
+              <li>在备赛过程中提升了技术实践能力和团队管理经验</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="side">
+
+        <!-- 基本信息 -->
+        <div class="section">
+          <div class="section-title"><span class="dot"></span>基本信息</div>
+          <div class="info-row"><strong>姓名</strong>汪家卫</div>
+          <div class="info-row"><strong>手机</strong>17857539411</div>
+          <div class="info-row"><strong>邮箱</strong>2775063301@qq.com</div>
+          <div class="info-row"><strong>籍贯</strong>浙江宁波</div>
+          <div class="info-row"><strong>学历</strong>大专 · 电子信息工程</div>
+        </div>
+
+        <!-- 专业技能 -->
+        <div class="section">
+          <div class="section-title"><span class="dot"></span>专业技能</div>
+          <div class="skill-tags">
+            <span class="skill-tag">C 语言</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">嵌入式开发</span>
+            <span class="skill-tag">物联网</span>
+            <span class="skill-tag">单片机</span>
+            <span class="skill-tag">Word</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">焊接</span>
+          </div>
+          <p style="margin-top:0.8rem;font-size:0.84rem;color:#555;">物联网调试员高级证书</p>
+        </div>
+
+        <!-- 自我评价 -->
+        <div class="section">
+          <div class="section-title"><span class="dot"></span>自我评价</div>
+          <p class="self-eval">工作积极认真，细心负责，善于发现问题并提出解决方案，具备较强的分析能力。勤奋好学，动手能力强，踏实肯干。具有良好的团队协作精神和社会责任感，面对挑战始终迎难而上，乐于尝试新事物。</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
