@@ -16,10 +16,10 @@
     }
 
     .resume {
-      max-width: 860px;
+      max-width: 920px;
       margin: 0 auto;
       background: #fff;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.09);
       border-radius: 4px;
       overflow: hidden;
     }
@@ -34,7 +34,7 @@
       font-size: 2.2rem;
       font-weight: 700;
       letter-spacing: 0.08em;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
     }
     .header .meta {
       display: flex;
@@ -43,11 +43,7 @@
       font-size: 0.9rem;
       color: rgba(255,255,255,0.75);
     }
-    .header .meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
+    .header .meta span { display: flex; align-items: center; gap: 0.3rem; }
     .header .meta .label { color: rgba(255,255,255,0.5); }
 
     /* ── Body ── */
@@ -55,7 +51,6 @@
       display: grid;
       grid-template-columns: 1fr 280px;
     }
-
     .main { padding: 2.5rem 2rem 2.5rem 3rem; }
     .side { padding: 2.5rem 3rem 2.5rem 0; }
 
@@ -72,16 +67,16 @@
       letter-spacing: 0.04em;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
     }
     .section-title .dot {
       width: 8px; height: 8px;
       background: #1a1a2e;
       border-radius: 50%;
-      display: inline-block;
+      flex-shrink: 0;
     }
 
-    /* ── Timeline items ── */
+    /* ── Items ── */
     .item { margin-bottom: 1.3rem; }
     .item:last-child { margin-bottom: 0; }
     .item-head {
@@ -91,56 +86,144 @@
       flex-wrap: wrap;
       gap: 0.3rem 1rem;
     }
-    .item-head h3 {
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: #1a1a2e;
-    }
-    .item-head .date {
-      font-size: 0.8rem;
-      color: #7f8c8d;
-      white-space: nowrap;
-    }
-    .item-sub {
-      font-size: 0.85rem;
-      color: #555;
-      margin: 0.15rem 0 0.35rem;
-    }
-    .item ul {
-      list-style: none;
-      padding: 0;
-    }
+    .item-head h3 { font-size: 0.98rem; font-weight: 600; color: #1a1a2e; }
+    .item-head .date { font-size: 0.8rem; color: #7f8c8d; white-space: nowrap; }
+    .item-sub { font-size: 0.85rem; color: #555; margin: 0.15rem 0 0.35rem; }
+    .item ul { list-style: none; padding: 0; }
     .item li {
-      font-size: 0.88rem;
-      color: #444;
-      padding: 0.15rem 0;
-      position: relative;
-      padding-left: 1rem;
+      font-size: 0.88rem; color: #444; padding: 0.15rem 0;
+      padding-left: 1rem; position: relative;
     }
     .item li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: #999;
-      font-size: 0.7rem;
+      content: "—"; position: absolute; left: 0;
+      color: #999; font-size: 0.7rem;
     }
 
-    /* ── Courses ── */
-    .courses {
-      font-size: 0.88rem;
-      color: #444;
-      line-height: 1.8;
-    }
+    .courses { font-size: 0.88rem; color: #444; line-height: 1.8; }
 
-    /* ── Sidebar ── */
-    .side .section-title {
-      font-size: 0.95rem;
+    /* ── Gallery ── */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.8rem;
     }
-    .skill-tags {
+    .gallery img {
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid #e0e4ea;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .gallery figcaption { font-size: 0.78rem; color: #888; text-align: center; margin-top: 0.3rem; }
+
+    /* ── Project card ── */
+    .project-card {
+      background: #fafbfc;
+      border: 1px solid #e8ecf0;
+      border-radius: 6px;
+      padding: 1.3rem;
+      margin-top: 0.6rem;
+    }
+    .project-card .tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
+      margin-bottom: 0.8rem;
     }
+    .project-card .tech {
+      font-size: 0.72rem;
+      background: #1a1a2e;
+      color: #fff;
+      padding: 0.2em 0.6em;
+      border-radius: 3px;
+      font-family: "SF Mono", "Consolas", monospace;
+    }
+    .arch-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin: 0.8rem 0;
+    }
+    .arch-card {
+      background: #fff;
+      border: 1px solid #e8ecf0;
+      border-radius: 4px;
+      padding: 0.8rem 1rem;
+    }
+    .arch-card h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .arch-card h4 .chip { font-size: 0.65rem; background: #eef2f7; padding: 0.15em 0.45em; border-radius: 3px; }
+    .arch-card p { font-size: 0.8rem; color: #555; line-height: 1.6; }
+    .flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: #555;
+      background: #fff;
+      border: 1px dashed #d0d5dd;
+      border-radius: 4px;
+      padding: 0.7rem 1rem;
+      margin-top: 0.8rem;
+    }
+    .flow .arrow { color: #1a1a2e; font-weight: 700; font-size: 0.85rem; }
+
+    /* ── Download button ── */
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.55em 1.2em;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .dl-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(26,26,46,0.3);
+    }
+    .dl-btn .icon { font-size: 1.1rem; }
+
+    /* ── Protocol ── */
+    .protocol {
+      background: #1a1a2e;
+      color: #a0d0a0;
+      font-family: "SF Mono", "Consolas", "Courier New", monospace;
+      font-size: 0.73rem;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      margin-top: 0.6rem;
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.6;
+    }
+
+    /* ── Lightbox ── */
+    .lightbox { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.88); z-index: 9999; align-items: center; justify-content: center; cursor: pointer; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 4px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+    .lightbox .close { position: absolute; top: 1.5rem; right: 2rem; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; }
+
+    /* ── Sidebar ── */
+    .side .section-title { font-size: 0.95rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .skill-tag {
       font-size: 0.8rem;
       background: #eef2f7;
@@ -149,26 +232,23 @@
       border-radius: 3px;
       border: 1px solid #e0e4ea;
     }
-    .side .info-row {
-      font-size: 0.88rem;
-      color: #555;
-      margin-bottom: 0.5rem;
-    }
+    .side .info-row { font-size: 0.88rem; color: #555; margin-bottom: 0.5rem; }
     .side .info-row strong {
-      color: #2c3e50;
-      display: block;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.1rem;
+      color: #2c3e50; display: block; font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.1rem;
     }
 
-    /* ── Self eval ── */
-    .self-eval {
-      font-size: 0.88rem;
-      color: #444;
-      line-height: 1.8;
+    .cert-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #fef9e7, #fdebd0);
+      border: 1px solid #f9e4b7;
+      color: #8b6914;
+      font-size: 0.82rem;
+      padding: 0.35em 0.8em;
+      border-radius: 4px;
+      margin-top: 0.8rem;
     }
+    .self-eval { font-size: 0.88rem; color: #444; line-height: 1.8; }
 
     /* ── Print ── */
     @media print {
@@ -177,6 +257,9 @@
       .header { padding: 1.5rem 2rem; }
       .main { padding: 1.5rem 1rem 1.5rem 2rem; }
       .side { padding: 1.5rem 2rem 1.5rem 0; }
+      .gallery img { box-shadow: none; }
+      .lightbox { display: none !important; }
+      .arch-block { grid-template-columns: 1fr 1fr; }
     }
 
     /* ── Mobile ── */
@@ -187,6 +270,9 @@
       .header .meta { gap: 0.4rem 1rem; font-size: 0.82rem; }
       .main { padding: 1.5rem; }
       .side { padding: 0 1.5rem 1.5rem; }
+      .gallery { grid-template-columns: 1fr; }
+      .arch-block { grid-template-columns: 1fr; }
+      .flow { font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -210,12 +296,89 @@
         <div class="section">
           <div class="section-title"><span class="dot"></span>教育背景</div>
           <div class="item">
-            <div class="item-head">
-              <h3>浙江工贸职业技术学院</h3>
-            </div>
+            <div class="item-head"><h3>浙江工贸职业技术学院</h3></div>
             <p class="item-sub">电子信息工程技术 &#183; 大专</p>
           </div>
           <p class="courses"><strong>主修课程：</strong>计算机网络、人工智能导论、电子产品制作、程序设计基础、电子与电路技术、程序设计进阶（C语言）、Linux操作系统、单片机技术综合实践、嵌入式技术与应用、Python项目实战、嵌入式技术综合实践、传感网应用开发、Arduino项目实战、物联网无线通信技术、物联网应用程序设计、物联网应用与开发</p>
+        </div>
+
+        <!-- 项目经历 -->
+        <div class="section">
+          <div class="section-title"><span class="dot"></span>项目经历</div>
+
+          <div class="item">
+            <div class="item-head">
+              <h3>物联网环境监测与控制系统</h3>
+              <span class="date">个人项目</span>
+            </div>
+            <p class="item-sub">STM32F103 + ESP32 + 巴法云 MQTT + AIO2 上位机</p>
+
+            <div class="project-card">
+              <div class="tech-stack">
+                <span class="tech">STM32F103</span>
+                <span class="tech">ESP32</span>
+                <span class="tech">MicroPython</span>
+                <span class="tech">HAL 库</span>
+                <span class="tech">UART</span>
+                <span class="tech">MQTT</span>
+                <span class="tech">巴法云</span>
+                <span class="tech">DHT11</span>
+                <span class="tech">ADC</span>
+                <span class="tech">I2C/OLED</span>
+                <span class="tech">PWM</span>
+                <span class="tech">AIO2</span>
+              </div>
+
+              <!-- 双MCU架构 -->
+              <div class="arch-block">
+                <div class="arch-card">
+                  <h4>STM32 <span class="chip">下位机</span></h4>
+                  <p>DHT11 采集温湿度、光敏电阻经 ADC 采集光照强度；OLED 实时显示传感器数据；GPIO 控制风扇、LED 灯、舵机；内置室内/室外双场景自动控制逻辑（温度阈值触发风扇、光照阈值触发灯光和舵机）</p>
+                </div>
+                <div class="arch-card">
+                  <h4>ESP32 <span class="chip">通信网关</span></h4>
+                  <p>MicroPython 编写，通过 UART 与 STM32 交换数据；WiFi STA 连接手机热点；MQTT 客户端对接巴法云，发布传感器数据并订阅远程控制指令；支持自动/手动模式切换与动态 Topic 订阅/取消</p>
+                </div>
+              </div>
+
+              <!-- 数据流 -->
+              <div class="flow">
+                <span>DHT11 / 光敏</span><span class="arrow">→</span>
+                <span>STM32 ADC+GPIO</span><span class="arrow">→</span>
+                <span>USART2 115200bps</span><span class="arrow">→</span>
+                <span>ESP32 UART</span><span class="arrow">→</span>
+                <span>WiFi 热点</span><span class="arrow">→</span>
+                <span>巴法云 MQTT</span><span class="arrow">⇄</span>
+                <span>AIO2 / 手机</span>
+              </div>
+
+              <!-- 通信协议 -->
+              <div class="protocol">STM32 → ESP32:  T:25,H:60,L:0.35|FAN:0,INLED:1,OUTLED:0,SERVO:0
+ESP32 → STM32:  FAN 1   INLED 1   INMODE 0   INOUT 1   SERVO 0</div>
+
+              <ul style="margin-top:0.8rem;">
+                <li>设计私有串口数据协议，传感器数据与控制状态单帧传输，提高通信效率</li>
+                <li>支持室内/室外两种场景及自动/手动双模式，MQTT 双向同步模式状态</li>
+                <li>ESP32 端实现掉线自动重连、心跳保活（30s）、内存回收，保证长时间稳定运行</li>
+                <li>OLED 显示中文界面 + 云平台远程监控 + AIO2 上位机，三端数据可视化</li>
+                <li>使用 AIO2 开发 Android 监控 App，支持手机端实时查看传感器数据与远程控制</li>
+              </ul>
+
+              <div class="gallery" style="max-width:320px;">
+                <figure>
+                  <img src="images/3.jpg" alt="项目实物照片" onclick="openLightbox(this.src)">
+                  <figcaption>实物展示</figcaption>
+                </figure>
+              </div>
+
+              <div style="margin-top:0.8rem;display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;">
+                <a class="dl-btn" href="Haodonxi.apk" download>
+                  <span class="icon">&#x1F4E6;</span> 下载 Android App (APK)
+                </a>
+                <span style="font-size:0.75rem;color:#999;">基于 AIO2 开发，手机端实时监控</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- 校园经历 -->
@@ -224,25 +387,35 @@
 
           <div class="item">
             <div class="item-head">
-              <h3>工匠坊</h3>
-              <span class="date">2023.12 — 2025.10</span>
+              <h3>大学生电子信息大赛</h3>
+              <span class="date">2024.07 — 2024.08</span>
             </div>
+            <p class="item-sub">省级大专组 &#183; 队长</p>
             <ul>
-              <li>跟随老师系统学习课外技术知识，涵盖焊接操作、各类常用工具使用、C 语言代码编写、多种编程软件应用</li>
-              <li>参与科技竞赛项目，将所学知识应用于实际作品开发</li>
+              <li>担任团队队长，独立负责核心代码编写与嵌入式系统调试</li>
+              <li>协调团队分工与任务排期，确保项目在赛前按时完成</li>
+              <li>通过比赛锻炼了嵌入式开发实战能力和团队协作经验</li>
             </ul>
+            <div class="gallery">
+              <figure>
+                <img src="images/1.jpg" alt="比赛照片1" onclick="openLightbox(this.src)">
+                <figcaption>比赛现场 ①</figcaption>
+              </figure>
+              <figure>
+                <img src="images/2.jpg" alt="比赛照片2" onclick="openLightbox(this.src)">
+                <figcaption>比赛现场 ②</figcaption>
+              </figure>
+            </div>
           </div>
 
           <div class="item">
             <div class="item-head">
-              <h3>大学生电子信息大赛</h3>
-              <span class="date">2024.07 — 2024.08</span>
+              <h3>工匠坊</h3>
+              <span class="date">2023.12 — 2025.10</span>
             </div>
-            <p class="item-sub">省级大专组</p>
             <ul>
-              <li>担任团队队长，负责核心代码编写与系统调试</li>
-              <li>协调团队分工与任务调度，把控项目整体进度</li>
-              <li>在备赛过程中提升了技术实践能力和团队管理经验</li>
+              <li>跟随老师系统学习课外技术知识：电路焊接、常用仪器仪表使用、C 语言编程、多种 IDE 及调试工具</li>
+              <li>参与多个科技竞赛和动手实践项目，将理论知识转化为实际作品</li>
             </ul>
           </div>
         </div>
@@ -251,7 +424,6 @@
 
       <div class="side">
 
-        <!-- 基本信息 -->
         <div class="section">
           <div class="section-title"><span class="dot"></span>基本信息</div>
           <div class="info-row"><strong>姓名</strong>汪家卫</div>
@@ -261,25 +433,28 @@
           <div class="info-row"><strong>学历</strong>大专 · 电子信息工程</div>
         </div>
 
-        <!-- 专业技能 -->
         <div class="section">
           <div class="section-title"><span class="dot"></span>专业技能</div>
           <div class="skill-tags">
             <span class="skill-tag">C 语言</span>
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">MicroPython</span>
+            <span class="skill-tag">STM32</span>
+            <span class="skill-tag">ESP32</span>
             <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">HAL / CubeMX</span>
+            <span class="skill-tag">UART / I2C</span>
+            <span class="skill-tag">MQTT</span>
+            <span class="skill-tag">Linux</span>
             <span class="skill-tag">嵌入式开发</span>
             <span class="skill-tag">物联网</span>
-            <span class="skill-tag">单片机</span>
-            <span class="skill-tag">Word</span>
-            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">传感器</span>
             <span class="skill-tag">焊接</span>
+            <span class="skill-tag">Word / Excel</span>
           </div>
-          <p style="margin-top:0.8rem;font-size:0.84rem;color:#555;">物联网调试员高级证书</p>
+          <div class="cert-badge">物联网调试员高级证书</div>
         </div>
 
-        <!-- 自我评价 -->
         <div class="section">
           <div class="section-title"><span class="dot"></span>自我评价</div>
           <p class="self-eval">工作积极认真，细心负责，善于发现问题并提出解决方案，具备较强的分析能力。勤奋好学，动手能力强，踏实肯干。具有良好的团队协作精神和社会责任感，面对挑战始终迎难而上，乐于尝试新事物。</p>
@@ -289,5 +464,22 @@
     </div>
 
   </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
