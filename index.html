@@ -180,26 +180,6 @@
     }
     .flow .arrow { color: #1a1a2e; font-weight: 700; font-size: 0.85rem; }
 
-    /* ── Download button ── */
-    .dl-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.55em 1.2em;
-      border-radius: 4px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .dl-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(26,26,46,0.3);
-    }
-    .dl-btn .icon { font-size: 1.1rem; }
-
     /* ── Protocol ── */
     .protocol {
       background: #1a1a2e;
@@ -361,7 +341,7 @@ ESP32 → STM32:  FAN 1   INLED 1   INMODE 0   INOUT 1   SERVO 0</div>
                 <li>支持室内/室外两种场景及自动/手动双模式，MQTT 双向同步模式状态</li>
                 <li>ESP32 端实现掉线自动重连、心跳保活（30s）、内存回收，保证长时间稳定运行</li>
                 <li>OLED 显示中文界面 + 云平台远程监控 + AIO2 上位机，三端数据可视化</li>
-                <li>使用 AIO2 开发 Android 监控 App，支持手机端实时查看传感器数据与远程控制</li>
+                <li>使用 AIO2 开发 Android App，接入云端数据库实现登录注册，可在手机端查看温湿度、切换自动/手动模式</li>
               </ul>
 
               <div class="gallery" style="max-width:320px;">
@@ -369,13 +349,6 @@ ESP32 → STM32:  FAN 1   INLED 1   INMODE 0   INOUT 1   SERVO 0</div>
                   <img src="images/3.jpg" alt="项目实物照片" onclick="openLightbox(this.src)">
                   <figcaption>实物展示</figcaption>
                 </figure>
-              </div>
-
-              <div style="margin-top:0.8rem;display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;">
-                <a class="dl-btn" href="Haodonxi.apk" download>
-                  <span class="icon">&#x1F4E6;</span> 下载 Android App (APK)
-                </a>
-                <span style="font-size:0.75rem;color:#999;">基于 AIO2 开发，手机端实时监控</span>
               </div>
             </div>
           </div>
